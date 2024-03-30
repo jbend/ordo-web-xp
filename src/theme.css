@@ -1,0 +1,32 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Theme Light */
+    color-scheme: dark;
+    --color-latte-base: 239 241 245;
+    --color-latte-text: 76 79 105;
+
+    /* Macchiato */
+    --color-macchiato-base: 36 39 58;
+    --color-macchiato-text: 202 211 245;
+
+    /* Mocha */
+    --color-mocha-base: 30 30 46;
+    --color-mocha-text: 205 214 244;
+  },
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-base: var(--color-macchiato-base);
+    --color-text: var(--color-macchiato-text);
+  }
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --color-base: var(--color-latte-base);
+    --color-text: var(--color-latte-text);
+  }
+
+}
